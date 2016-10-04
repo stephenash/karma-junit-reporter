@@ -117,7 +117,7 @@ var JUnitReporter = function (baseReporterDecorator, config, logger, helper, for
   }
 
   this.onBrowserComplete = function (browser) {
-    var suite = suites[browser.id]
+    var suite = suites && suites[browser.id]
     var result = browser.lastResult
     if (!suite || !result) {
       return // don't die if browser didn't start
